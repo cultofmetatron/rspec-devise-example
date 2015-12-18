@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  name: MyString
+  created_at: 2015-12-17 22:43:43
+  content: MyText
+  owner: 1
+  due_date: 2015-12-17 22:43:43
+  done: false
+
+two:
+  id: 
+  name: MyString
+  created_at: 2015-12-17 22:43:43
+  content: MyText
+  owner: 1
+  due_date: 2015-12-17 22:43:43
+  done: false

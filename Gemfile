@@ -14,6 +14,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'jquery-rails'
+
 # Use react as the JavaScript library
 gem 'react-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -40,6 +42,9 @@ gem "rspec"
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'factory_girl'
 end
 
 group :development do
