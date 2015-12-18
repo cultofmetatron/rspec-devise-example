@@ -15,6 +15,7 @@ FactoryGirl.define do
   factory :task do
     sequence(:name) { |n| "takes \##{n}"}
     sequence(:content) { |n| "number #{n} of content"}
+    created_at Time.now
     association :owner, factory: :user
   end
 

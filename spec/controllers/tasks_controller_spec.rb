@@ -34,10 +34,7 @@ RSpec.describe TasksController, type: :controller do
   # Task. As you add validations to Task, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {
-        "content"=> "foobar",
-        "name" => "a task"
-    }
+    FactoryGirl.build(:task).attributes
   }
 
   let(:invalid_attributes) {
@@ -153,7 +150,7 @@ RSpec.describe TasksController, type: :controller do
         user = FactoryGirl.build(:user)
         user.save
         sign_in(user)
-        task = user.tasks.create! valid_attributes
+        task = user.tasks.create valid_attributes
         put :update, {:id => task.to_param, :task => valid_attributes}, valid_session
         expect(assigns(:task)).to eq(task)
       end
