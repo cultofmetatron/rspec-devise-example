@@ -6,6 +6,14 @@ class TasksController < ApplicationController
   # GET /tasks.json
   def index
     @tasks = Task.all
+
+    if user_signed_in?
+      @logged_in = true
+      @tasks = current_user.tasks.all
+    else
+      @logged_in = false
+      @tasks = []
+    end
   end
 
   # GET /tasks/1
@@ -25,7 +33,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
-    @task = Task.new(task_params)
+    @task = current_user.tasks.new(task_params)
 
     respond_to do |format|
       if @task.save

@@ -40,10 +40,13 @@ RSpec.describe TasksController, type: :controller do
 
   describe "GET #index" do
     it "assigns all tasks as @tasks" do
-      sign_in
-      task = Task.create! valid_attributes
+      user = FactoryGirl.build(:user)
+      sign_in(user)
+      task = user.tasks.create! valid_attributes
+      #task = Task.create! valid_attributes
       get :index, {}, valid_session
       expect(assigns(:tasks)).to eq([task])
+      expect(task.owner).to equal(user.id)
     end
   end
 

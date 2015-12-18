@@ -19,7 +19,7 @@ RSpec.describe "tasks/edit", type: :view do
 
       assert_select "textarea#task_content[name=?]", "task[content]"
 
-      assert_select "input#task_owner[name=?]", "task[owner]"
+
 
       assert_select "input#task_done[name=?]", "task[done]"
     end
