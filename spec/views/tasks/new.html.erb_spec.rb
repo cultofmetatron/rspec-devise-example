@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#https://www.relishapp.com/rspec/rspec-rails/v/3-0/docs/view-specs/view-spec
 RSpec.describe "tasks/new", type: :view do
   before(:each) do
     assign(:task, Task.new(

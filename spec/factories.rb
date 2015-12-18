@@ -15,7 +15,7 @@ FactoryGirl.define do
   factory :task do
     sequence(:name) { |n| "takes \##{n}"}
     sequence(:content) { |n| "number #{n} of content"}
-    #association :owner, factory: :user
+    association :owner, factory: :user
   end
 
 
